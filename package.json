@@ -1,0 +1,28 @@
+{
+  "name": "recastai-recognizer",
+  "version": "0.0.1",
+  "description": "An MS Bot Framework IIntentRecognizer implementation for Recast.ai",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bassmanitram/recastai-recognizer.git"
+  },
+  "keywords": [
+    "recastai",
+    "botbuilder",
+    "bots",
+    "chatbots"
+  ],
+  "author": "Martin Bartlett <martin.j.bartlett@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bassmanitram/recastai-recognizer/issues"
+  },
+  "homepage": "https://github.com/bassmanitram/recastai-recognizer#readme",
+  "dependencies": {
+    "recastai": "^2.1.0"
+  }
+}
