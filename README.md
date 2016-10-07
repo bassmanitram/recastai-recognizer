@@ -1,2 +1,2 @@
 # recastai-recognizer
-An MS Bot Framfork IIntentRecognizer for Reast.ai
+An MS Bot Framework IIntentRecognizer implementation for Recast.ai
