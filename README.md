@@ -57,6 +57,12 @@ matching facilities, making dialog and bot development with Recast.ai much
 more intuitive and closer to the recommended style of the `botbuilder` 
 framework.
 
+## Notes
+
+* Entity information from Recast.ai far exceeds that defined for the `IEntity` interface.
+  Consequently, for each returned entity, the `entity` (string) property of the `IEntity` structure is set to the `raw` property of the Recast entity object,
+  while an additional property, `description`, is set to the full Recast entity object.
+* The full Recast response structure can be found in the `recastResult` property of the returned `IIntentRecognizerResult` object.
 
 ## Contributing
 

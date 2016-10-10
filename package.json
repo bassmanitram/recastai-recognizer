@@ -1,10 +1,10 @@
 {
   "name": "recastai-recognizer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An MS Bot Framework IIntentRecognizer implementation for Recast.ai",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,9 @@
   "homepage": "https://github.com/bassmanitram/recastai-recognizer#readme",
   "dependencies": {
     "recastai": "^2.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.1"
   }
 }
