@@ -1,7 +1,7 @@
 recastai-recognizer
 ===================
 
-An MS Bot Framework `IIntentRecognizer` implementation for Recast.ai
+An MS Bot Framework `IIntentRecognizer` implementation for [Recast.ai](https://recast.ai)
 
 ## Prereqs
 * [Recast.ai node.js client, at least version 2](https://www.npmjs.com/package/recastai)
@@ -36,7 +36,7 @@ bot.dialog('/', intents)
 /*
  * Matching against one Recast.ai intent
  */
-dialog.matchesAny('YOUR_INTENT', function(session, args) {
+dialog.matches('YOUR_INTENT', function(session, args) {
     ...
 }
 
@@ -48,10 +48,15 @@ dialog.matchesAny(['YOUR_INTENT_1', 'YOUR_INTENT_2' ...], function(session, args
 }
 ...
 ```
-This then allows the Recast.ai API to be used with the `botbuilder` intent matching facilities, making dialog and bot development with Recast.ai much more intuitive and closer to the ntent of the `botbuilder` framework.
 
-`YOUR_TOKEN` should be the client token from your Recast.aia Bot
-`YOUR_LANGUAGE` should be the language in which the utterenaces are made (e.g. `en` or `fr`)
+* `YOUR_TOKEN` should be the client token string from your Recast.aia bot
+* `YOUR_LANGUAGE` should be the language in which the utterenaces are made (e.g. `"en"` or `"fr"`)
+
+This allows the Recast.ai API to be used with the `botbuilder` intent 
+matching facilities, making dialog and bot development with Recast.ai much 
+more intuitive and closer to the recommended style of the `botbuilder` 
+framework.
+
 
 ## Contributing
 
@@ -61,4 +66,5 @@ Add unit tests for any new or changed functionality. Lint and test your code - n
 
 ## Release History
 
+* 0.0.2 Documentation fixes!
 * 0.0.1 Initial release

@@ -1,6 +1,6 @@
 {
   "name": "recastai-recognizer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An MS Bot Framework IIntentRecognizer implementation for Recast.ai",
   "main": "index.js",
   "scripts": {
