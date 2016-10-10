@@ -68,9 +68,10 @@ framework.
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. That said, my own style is rather old-school, so any improvements that retain compatibility with the minimum platform requirements of the Recast.ai framework are more than welcome.
 
-Add unit tests for any new or changed functionality. Lint and test your code - none of which I've been particularly careful to observe in this very first release! 
+Add unit tests for any new or changed functionality. Lint and test your code - some of which I've been particularly careful to observe in these early releases! 
 
 ## Release History
 
+* 0.0.3 Better Recast Entity support, plus tests!
 * 0.0.2 Documentation fixes!
 * 0.0.1 Initial release
