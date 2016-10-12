@@ -89,9 +89,9 @@ describe('Recast.ai Recognizer', function() {
 					expect(recResult.entities[1]).to.have.property('entity').that.is.ok
 					expect(recResult.entities[2]).to.have.property('entity').that.is.ok
 
-					expect(recResult.entities[0]).to.have.property('description').that.is.ok
-					expect(recResult.entities[1]).to.have.property('description').that.is.ok
-					expect(recResult.entities[2]).to.have.property('description').that.is.ok
+					expect(recResult.entities[0]).to.have.property('details').that.is.ok
+					expect(recResult.entities[1]).to.have.property('details').that.is.ok
+					expect(recResult.entities[2]).to.have.property('details').that.is.ok
 
 					done();
 				}

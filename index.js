@@ -42,7 +42,7 @@ const rairec = {
 					if (res.entities) {
 					    res.entities.forEach(function(entity) {
 							responseEntities.push({
-								type: entity.name, entity: entity.raw, score: entity.confidence, description: entity
+								type: entity.name, entity: entity.raw, score: entity.confidence, details: entity
 							})
 						})
 					}

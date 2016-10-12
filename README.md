@@ -61,7 +61,7 @@ framework.
 
 * Entity information from Recast.ai far exceeds that defined for the `IEntity` interface.
   Consequently, for each returned entity, the `entity` (string) property of the `IEntity` structure is set to the `raw` property of the Recast entity object,
-  while an additional property, `description`, is set to the full Recast entity object.
+  while an additional property, `details`, is set to the full Recast entity object.
 * The full Recast response structure can be found in the `recastResult` property of the returned `IIntentRecognizerResult` object.
 
 ## Contributing
@@ -72,6 +72,7 @@ Add unit tests for any new or changed functionality. Lint and test your code - s
 
 ## Release History
 
+* 0.0.4 Breaking change! "description" in IEntity object changed to "details"
 * 0.0.3 Better Recast Entity support, plus tests!
 * 0.0.2 Documentation fixes!
 * 0.0.1 Initial release

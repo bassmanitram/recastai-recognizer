@@ -1,0 +1,133 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'publish' ]
+2 info using npm@3.8.6
+3 info using node@v5.12.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/jbartle9/Development/git/repositories/recastai-recognizer',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/jbartle9/.npm/recastai-recognizer/0.0.3/package.tgz not in flight; packing
+9 verbose correctMkdir /home/jbartle9/.npm correctMkdir not in flight; initializing
+10 info lifecycle recastai-recognizer@0.0.3~prepublish: recastai-recognizer@0.0.3
+11 silly lifecycle recastai-recognizer@0.0.3~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/home/jbartle9/.npm/recastai-recognizer/0.0.3/package.tgz',
+12 verbose tar pack   '/home/jbartle9/Development/git/repositories/recastai-recognizer' ]
+13 verbose tarball /home/jbartle9/.npm/recastai-recognizer/0.0.3/package.tgz
+14 verbose folder /home/jbartle9/Development/git/repositories/recastai-recognizer
+15 verbose addLocalTarball adding from inside cache /home/jbartle9/.npm/recastai-recognizer/0.0.3/package.tgz
+16 verbose correctMkdir /home/jbartle9/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd recastai-recognizer@0.0.3
+18 verbose afterAdd /home/jbartle9/.npm/recastai-recognizer/0.0.3/package/package.json not in flight; writing
+19 verbose correctMkdir /home/jbartle9/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /home/jbartle9/.npm/recastai-recognizer/0.0.3/package/package.json written
+21 silly publish { name: 'recastai-recognizer',
+21 silly publish   version: '0.0.3',
+21 silly publish   description: 'An MS Bot Framework IIntentRecognizer implementation for Recast.ai',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { test: 'make test' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/bassmanitram/recastai-recognizer.git' },
+21 silly publish   keywords: [ 'recastai', 'botbuilder', 'bots', 'chatbots' ],
+21 silly publish   author:
+21 silly publish    { name: 'Martin Bartlett',
+21 silly publish      email: 'martin.j.bartlett@gmail.com' },
+21 silly publish   license: 'MIT',
+21 silly publish   bugs: { url: 'https://github.com/bassmanitram/recastai-recognizer/issues' },
+21 silly publish   homepage: 'https://github.com/bassmanitram/recastai-recognizer#readme',
+21 silly publish   dependencies: { recastai: '^2.1.0' },
+21 silly publish   devDependencies: { chai: '^3.5.0', mocha: '^3.1.1' },
+21 silly publish   readme: 'recastai-recognizer\n===================\n\nAn MS Bot Framework `IIntentRecognizer` implementation for [Recast.ai](https://recast.ai)\n\n## Prereqs\n* [Recast.ai node.js client, at least version 2](https://www.npmjs.com/package/recastai)\n* [MS Bot Framework node.js SDK](https://www.npmjs.com/package/botbuilder) - though not a technical dependency of this module.\n\n## Installation\n```bash\nnpm install recastai-recognizer\n```\n\n## usage\nThe recognizer is used in basically the same way as the \n[LUIS recognizer plugin](https://docs.botframework.com/en-us/node/builder/guides/understanding-natural-language) \npackaged with the MS Bot Framework SDK. \nIt uses the [Recast.ai node.js client module](https://www.npmjs.com/package/recastai) \nto communicate with your Recast.ai bot:\n```javascript\n/*\n * The Recast.ai-specific bit\n */\nvar rairec = require(\'recastai-recognizer\')\nvar recognizer = new rairec.RecastRecognizer(YOUR_TOKEN, YOUR_LANGUAGE)\n\n/*\n * Standard MS Bot Framework stuff\n */\nvar builder = require(\'botbuilder\')\nvar dialog = new builder.IntentDialog({ recognizers: [recognizer] });\nvar bot = new builder.UniversalBot(MS_BOT_FMWK_CONNECTOR)\nbot.dialog(\'/\', intents)\n\n/*\n * Matching against one Recast.ai intent\n */\ndialog.matches(\'YOUR_INTENT\', function(session, args) {\n    ...\n}\n\n/*\n * Matching against one of a number of Recast.ai intents\n */\ndialog.matchesAny([\'YOUR_INTENT_1\', \'YOUR_INTENT_2\' ...], function(session, args) {\n    ...\n}\n...\n```\n\n* `YOUR_TOKEN` should be the client token string from your Recast.aia bot\n* `YOUR_LANGUAGE` should be the language in which the utterenaces are made (e.g. `"en"` or `"fr"`)\n\nThis allows the Recast.ai API to be used with the `botbuilder` intent \nmatching facilities, making dialog and bot development with Recast.ai much \nmore intuitive and closer to the recommended style of the `botbuilder` \nframework.\n\n## Notes\n\n* Entity information from Recast.ai far exceeds that defined for the `IEntity` interface.\n  Consequently, for each returned entity, the `entity` (string) property of the `IEntity` structure is set to the `raw` property of the Recast entity object,\n  while an additional property, `description`, is set to the full Recast entity object.\n* The full Recast response structure can be found in the `recastResult` property of the returned `IIntentRecognizerResult` object.\n\n## Contributing\n\nIn lieu of a formal styleguide, take care to maintain the existing coding style. That said, my own style is rather old-school, so any improvements that retain compatibility with the minimum platform requirements of the Recast.ai framework are more than welcome.\n\nAdd unit tests for any new or changed functionality. Lint and test your code - some of which I\'ve been particularly careful to observe in these early releases! \n\n## Release History\n\n* 0.0.3 Better Recast Entity support, plus tests!\n* 0.0.2 Documentation fixes!\n* 0.0.1 Initial release\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'ac5791f3658bb191477a1d52a8933248f9fe965d',
+21 silly publish   _id: 'recastai-recognizer@0.0.3',
+21 silly publish   _shasum: 'd8a17853f85c856057c20570a122f9da5a49bd39',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name recastai-recognizer
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry http://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'recastai-recognizer',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'recastai-recognizer',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri http://registry.npmjs.org/recastai-recognizer
+28 verbose publish registryBase http://registry.npmjs.org/
+29 silly publish uploading /home/jbartle9/.npm/recastai-recognizer/0.0.3/package.tgz
+30 verbose request uri http://registry.npmjs.org/recastai-recognizer
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 2:23:04 PM
+33 verbose request using bearer token for auth
+34 verbose request id 4850c9b26df107db
+35 http request PUT http://registry.npmjs.org/recastai-recognizer
+36 http 408 http://registry.npmjs.org/recastai-recognizer
+37 verbose bad json <html><body><h1>408 Request Time-out</h1>
+37 verbose bad json Your browser didn't send a complete request in time.
+37 verbose bad json </body></html>
+38 error registry error parsing json
+39 verbose headers { 'content-type': 'text/html',
+39 verbose headers   'cache-control': 'max-age=300',
+39 verbose headers   'transfer-encoding': 'chunked',
+39 verbose headers   'accept-ranges': 'bytes',
+39 verbose headers   date: 'Mon, 10 Oct 2016 12:23:57 GMT',
+39 verbose headers   via: '1.1 varnish',
+39 verbose headers   connection: 'keep-alive',
+39 verbose headers   'x-served-by': 'cache-lcy1132-LCY',
+39 verbose headers   'x-cache': 'MISS',
+39 verbose headers   'x-cache-hits': '0',
+39 verbose headers   'x-timer': 'S1476102187.307675,VS0,VE50470',
+39 verbose headers   vary: 'Accept-Encoding' }
+40 info retry will retry, error on last attempt: SyntaxError: Unexpected token <
+40 info retry <html><body><h1>408 Request Time-out</h1>
+40 info retry Your browser didn't send a complete request in time.
+40 info retry </body></html>
+41 info attempt registry request try #2 at 2:24:05 PM
+42 verbose request using bearer token for auth
+43 http request PUT http://registry.npmjs.org/recastai-recognizer
+44 http 403 http://registry.npmjs.org/recastai-recognizer
+45 verbose headers { 'content-type': 'application/json',
+45 verbose headers   'cache-control': 'max-age=300',
+45 verbose headers   'content-length': '95',
+45 verbose headers   'accept-ranges': 'bytes',
+45 verbose headers   date: 'Mon, 10 Oct 2016 12:24:10 GMT',
+45 verbose headers   via: '1.1 varnish',
+45 verbose headers   connection: 'keep-alive',
+45 verbose headers   'x-served-by': 'cache-lcy1132-LCY',
+45 verbose headers   'x-cache': 'MISS',
+45 verbose headers   'x-cache-hits': '0',
+45 verbose headers   'x-timer': 'S1476102247.830400,VS0,VE2705',
+45 verbose headers   vary: 'Accept-Encoding' }
+46 verbose request invalidating /home/jbartle9/.npm/registry.npmjs.org/recastai-recognizer on PUT
+47 error publish Failed PUT 403
+48 verbose stack Error: "You cannot publish over the previously published version 0.0.3." : recastai-recognizer
+48 verbose stack     at makeError (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+48 verbose stack     at CachingRegistryClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+48 verbose stack     at Request._callback (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+48 verbose stack     at Request.self.callback (/usr/lib/node_modules/npm/node_modules/request/request.js:199:22)
+48 verbose stack     at emitTwo (events.js:100:13)
+48 verbose stack     at Request.emit (events.js:185:7)
+48 verbose stack     at Request.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1036:10)
+48 verbose stack     at emitOne (events.js:95:20)
+48 verbose stack     at Request.emit (events.js:182:7)
+48 verbose stack     at IncomingMessage.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:963:12)
+49 verbose statusCode 403
+50 verbose pkgid recastai-recognizer
+51 verbose cwd /home/jbartle9/Development/git/repositories/recastai-recognizer
+52 error Linux 3.13.0-96-generic
+53 error argv "/usr/bin/nodejs" "/usr/bin/npm" "publish"
+54 error node v5.12.0
+55 error npm  v3.8.6
+56 error code E403
+57 error "You cannot publish over the previously published version 0.0.3." : recastai-recognizer
+58 error If you need help, you may report this error at:
+58 error     <https://github.com/npm/npm/issues>
+59 verbose exit [ 1, true ]
